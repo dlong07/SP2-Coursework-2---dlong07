@@ -1,14 +1,11 @@
 #BlueJ class context
-comment0.params=address
-comment0.target=PowerUserMobileSubscription(java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PowerUserMobileSubscription\r\n
+comment0.params=subscriber\ phoneNumber
+comment0.target=PowerUserMobileSubscription(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PowerUserMobileSubscription\r\n\ \r\n\ @param\ \ \ \ subscriber\ -\ String\ containing\ subscribers\ name\ -\ non\ null\r\n\ @param\ \ \ \ phoneNumber\ -\ String\ containing\ the\ subcribers\ phone\ number\ -\ non\ null\r\n
 comment1.params=
 comment1.target=int\ computeTotalChargeInPence()
-comment1.text=\r\n\ Overridden\ method\ from\ Subscriber\ to\ compute\ the\ total\ charge\r\n\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
+comment1.text=\r\n\ Overridden\ method\ from\ Subscriber.\ Computes\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ Calculated\ as\ the\ standing\ charge\ for\ the\ billing\ period\ +\r\n\ the\ product\ of\ 10\ pence\ and\ up\ to\ 1800\ minutes\ over\ the\ billing\ period\ +\r\n\ the\ product\ of\ 8\ pence\ and\ up\ to\ 900\ texts\ messages\ over\ the\ billing\ period\r\n\ Anything\ above\ the\ maximum\ minutes\ and\ texts\ is\ free\r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
 comment2.params=
-comment2.target=java.lang.String\ getAddress()
-comment2.text=\r\n\ Getter\ method\ taken\ from\ HasAddress\ interface.\ Used\ to\ get\ the\ address\ of\ the\ subscriber\r\n\ \r\n\ \r\n\ @return\ String\ contain\ address\ of\ the\ subscriber\r\n
-comment3.params=
-comment3.target=int\ getMaxChargeInPence()
-comment3.text=\r\n\ A\ method\ to\ compute\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
-numComments=4
+comment2.target=int\ getMaxChargeInPence()
+comment2.text=\r\n\ A\ method\ to\ compute\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
+numComments=3

@@ -20,8 +20,20 @@ public abstract class Subscription
      */
     public Subscription(String subscriber, String subscriptionName, int standingChargeInPence)
     {
+        if(subscriber == null || subscriber == "")
+        {
+            throw new IllegalArgumentException("Subcriber name cannot be null! Please try again.");
+        }
         this.subscriber = subscriber;
+        if(subscriptionName == null || subscriptionName == "")
+        {
+            throw new IllegalArgumentException("Subcription name cannot be null! Please try again.");
+        }
         this.subscriptionName = subscriptionName;
+        if(standingChargeInPence < 0)
+        {
+            throw new IllegalArgumentException("Standing Charge must 0 or greater!");
+        }
         this.standingChargeInPence = standingChargeInPence;
     }
     
@@ -34,7 +46,7 @@ public abstract class Subscription
     
     /**
      * Method does nothing at superclass level. Optional use for subclasses as not all will need it but can 
-     * only fall here in the inheritance hierarchy
+     * only fall here in the inheritance hierarchy as it can't be abstract in the PhoneSubscription class
      * 
      * Used to reset the usage at the start of a billing period
      */
@@ -49,7 +61,8 @@ public abstract class Subscription
      */
     public final void endPeriod()
     {
-        
+        //reset other billing period. Add period???
+        System.out.println(this.generateBill());
     }
     
     /**
@@ -59,7 +72,11 @@ public abstract class Subscription
      */
     public final String generateBill()
     {
-        return "TEST";
+        
+        return "********************************\n"+"* Subcriber: "
+                +this.getSubscriber()+"\n* Subscription Type: "
+                +this.getSubscriptionName()+"\n* Amount owed: "
+                +computeTotalChargeInPence();
     }
     
     /**
@@ -69,7 +86,7 @@ public abstract class Subscription
      */
     public String getSubscriber()
     {
-        return "TEST";
+        return subscriber;
     }
     
     /**
@@ -79,7 +96,7 @@ public abstract class Subscription
     */
     public String getSubscriptionName()
     {
-        return "TEST";
+        return subscriptionName;
     }
     
     /**
@@ -89,6 +106,6 @@ public abstract class Subscription
     */
     public int getStandingChargeInPence()
     {
-        return 1;
+        return standingChargeInPence;
     }
 }

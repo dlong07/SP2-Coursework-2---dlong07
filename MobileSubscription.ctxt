@@ -1,5 +1,11 @@
 #BlueJ class context
-comment0.params=
-comment0.target=MobileSubscription()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MobilePhoneSubsription\r\n\ No\ parameters\ as\ contructor\ from\ the\ superclasses\ will\ deal\ with\ this\r\n\ \r\n
-numComments=1
+comment0.params=subscriber\ subscriptionName\ phoneNumber
+comment0.target=MobileSubscription(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MobilePhoneSubsription\r\n\ \r\n\ \r\n
+comment1.params=number
+comment1.target=void\ sendTextMessages(int)
+comment1.text=\r\n\ Setter\ method\ to\ keep\ add\ the\ number\ of\ texts\ used\ by\ the\ subscriber\ over\ a\ given\ billing\ period.\ \r\n\ \r\n\ @param\ \ \ \ int\ of\ containing\ the\ number\ of\ texts\ sent\ by\ user\r\n
+comment2.params=
+comment2.target=int\ getTextMessages()
+comment2.text=\r\n\ Getter\ method\ to\ keep\ track\ of\ the\ number\ of\ text\ messages\ sent\r\n\ \r\n\ \r\n\ @return\ \ \ \ \ int\ containing\ the\ number\ minutes\ used\ in\ a\ given\ billing\ period\r\n
+numComments=3

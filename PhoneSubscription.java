@@ -7,18 +7,62 @@
  */
 public abstract class PhoneSubscription extends Subscription
 {
-    // instance variable
-    String PhoneNumber;
+    // instance variables for all types of PhoneSubscription
+    private String phoneNumber; // all phone subscriptions will need a phone number given by concrete classes
+    private int minutesUsed; // all phone subscriptions will need to keep track of the minutes they've used
     /**
      * Constructor for objects of class PhoneSubscription
      * User the contructor of Subscription to create required instance variables
      * 
      * @param containing the number String container
      */
-    public PhoneSubscription(String number)
+    public PhoneSubscription(String subscriber, String subscriptionName, String phoneNumber)
     {
-        // Force the concrete classes to initalise number
-        super("","",1);
-        this.PhoneNumber = number;
+        super(subscriber, subscriptionName, 0);
+        this.phoneNumber = phoneNumber;
+        this.minutesUsed = 0; //set to zero when created as they can't have used any minutes beforehand
+    }
+    /**
+     * Getter method to return the subscriber's phone number
+     * 
+     * @return String containing subscriber's phone number
+     */
+    public String getPhoneNumber()
+    {
+        return this.phoneNumber;
+    }
+    
+    /**
+    * Setter method to keep track of the minutes used by the subscriber. 
+    * make call is in this class all PhoneSubscription class will need to make calls
+    * 
+    * @param    int of containing the number of minutes used in the call
+    */
+    public void makeCall(int minutes)
+    {
+        this.minutesUsed += minutes;
+    }
+    
+    /**
+    * Getter method to keep track of the minutes used by the subscriber
+    * 
+    * 
+    * @return     int containing the number minutes used in a given billing period
+    */    
+    public int getCallMinutes()
+    {
+        return minutesUsed;
+    }
+    
+    /**
+    * Method to reset the usage at the end of a billing period
+    * The method then prints the bill for the user and starts the billing period over again.
+    * 
+    */
+   @Override
+    public void resetConsumption()
+    {
+        minutesUsed = 0;
+        this.endPeriod();
     }
 }

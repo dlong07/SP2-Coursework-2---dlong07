@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Concrete class for a newspaper subscription
  * 
@@ -19,7 +19,8 @@ public class NewspaperSubscription extends Subscription implements HasAddress, B
     */
     public NewspaperSubscription(String subscriber, String newspaper, int standingChargeInPence, String address)
     {   
-        super(subscriber, "Newspaper", standingChargeInPence);
+        super(subscriber, "Newspaper", 0);
+        Scanner in = new Scanner(System.in);
         this.newspaper = newspaper;
         this.address = address;
     }

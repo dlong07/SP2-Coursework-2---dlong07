@@ -6,41 +6,52 @@
  */
 public class PowerUserMobileSubscription extends MobileSubscription implements BoundedCharge
 {
-    // instance variable
-    private String address;
+    // instance variables
+    private final int sCharge = 4000; //constant to store standing charge for all power mobile users
+    private final int maxMins = 1800; //maximum number of minutes that a  subscriber will be charged for
+    private final int maxTexts = 900; //maximum number texts that a subscriber will be charged for
     /**
      * Constructor for objects of class PowerUserMobileSubscription
+     * 
+     * @param    subscriber - String containing subscribers name - non null
+     * @param    phoneNumber - String containing the subcribers phone number - non null
      */
-    public PowerUserMobileSubscription(String address)
+    public PowerUserMobileSubscription(String subscriber, String phoneNumber)
     {
-        this.address = address;
+        super(subscriber,"Mobile Power User",phoneNumber);
     }
 
     /**
-     * Overridden method from Subscriber to compute the total charge
-     * for a billing period for a pay as you subscriber
+     * Overridden method from Subscriber. Computes the total charge for a billing period for a pay as you subscriber
      * 
+     * Calculated as the standing charge for the billing period +
+     * the product of 10 pence and up to 1800 minutes over the billing period +
+     * the product of 8 pence and up to 900 texts messages over the billing period
+     * Anything above the maximum minutes and texts is free
      * 
      * @return  an int for the amount of the billing period in pence
      */
     @Override
     public int computeTotalChargeInPence()
     {
-        return 1;
+        if(getCallMinutes() >= maxMins && getTextMessages() >= maxTexts)
+        {
+            return getMaxChargeInPence();
+        }
+        else if(getCallMinutes() < maxMins && getTextMessages() >= maxTexts)
+        {
+            return sCharge+(maxTexts*8)+(getCallMinutes()*10);
+        }
+        else if(getCallMinutes() >= maxMins && getTextMessages() < maxTexts)
+        {
+            return sCharge+(maxMins*10)+(getTextMessages()*8);
+        }
+        else
+        {
+            return sCharge+(getCallMinutes()*10)+(getTextMessages()*8);
+        }
     }
     
-    /**
-    * Getter method taken from HasAddress interface. Used to get the address of the subscriber
-    * 
-    * 
-    * @return String contain address of the subscriber
-    */
-    public String getAddress()
-    {
-        return this.address;
-    }
-    
-
     /**
      * A method to compute the total charge for a billing period for a pay as you subscriber
      * 
@@ -50,6 +61,6 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
     @Override
     public int getMaxChargeInPence()
     {
-        return 1;
+        return (maxMins*10)+(maxTexts*8)+sCharge;
     }
 }
