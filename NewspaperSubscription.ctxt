@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=subscriber\ newspaper\ standingChargeInPence\ address
+comment0.target=NewspaperSubscription(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ NewspaperSubscription\r\n\ Creates\ a\ landLineSubscription\ object\ with\ a\ phoneNumber\r\n\ \r\n\ @param\ newspaper\ -\ String\ containing\ name\ of\ the\ newspaper\ that\ the\ subscriber\ is\ subscribed\ to\r\n\ @param\ address\ -\ String\ containing\ the\ address\ of\ the\ subscriber\r\n
+comment1.params=
+comment1.target=int\ computeTotalChargeInPence()
+comment1.text=\r\n\ Overridden\ method\ from\ super\ class\ Subscription.\ Gets\ the\ value\ owed\ by\ the\ subscriber\ for\ the\ \r\n\ given\ billing\ period\r\n\ \r\n\ @return\ int\ containing\ the\ charge\ for\ the\ subscriber\ for\ the\ given\ billing\ period\r\n
+comment2.params=
+comment2.target=java.lang.String\ getAddress()
+comment2.text=\r\n\ Getter\ method\ taken\ from\ HasAddress\ interface.\ Used\ to\ get\ the\ address\ of\ the\ subscriber\r\n\ \r\n\ \r\n\ @return\ String\ contain\ address\ of\ the\ subscriber\r\n
+comment3.params=
+comment3.target=int\ getMaxChargeInPence()
+comment3.text=\r\n\ Getter\ method\ taken\ from\ BoundedCharge\ interface.\ Used\ to\ get\ the\ maximum\ chargeable\ ammount\ \r\n\ for\ a\ subscriber\r\n\ \r\n\ \r\n\ @return\ int\ containing\ the\ maximum\ charge\ for\ a\ subscriber\ over\ a\ given\ billing\ period.\r\n
+numComments=4

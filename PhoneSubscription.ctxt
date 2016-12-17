@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=number
+comment0.target=PhoneSubscription(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PhoneSubscription\r\n\ User\ the\ contructor\ of\ Subscription\ to\ create\ required\ instance\ variables\r\n\ \r\n\ @param\ containing\ the\ number\ String\ container\r\n
+numComments=1

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PayWhatYouUseMobileSubscription()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PayWhatYouUseMobileSubscription\r\n
+comment1.params=
+comment1.target=int\ computeTotalChargeInPence()
+comment1.text=\r\n\ A\ method\ to\ compute\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
+numComments=2

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=PhoneNumber
+comment0.target=LandLineSubscription(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LandLineSubscription.\r\n\ Creates\ a\ landLineSubscription\ object\ with\ a\ phoneNumber\r\n\ \r\n\ @param\ PhoneNumber\ -\ unique\ phone\ number\ for\ subscriber\r\n
+comment1.params=
+comment1.target=java.lang.String\ getAddress()
+comment1.text=\r\n\ Method\ to\ return\ the\ address\ \r\n\ \r\n\ @return\ \ \ \ \ String\ containing\ address\ of\ the\ subscriber\r\n
+comment2.params=
+comment2.target=int\ computeTotalChargeInPence()
+comment2.text=\r\n\ Method\ to\ compute\ the\ total\ charge\ for\ a\ subscriber\ per\ billing\ period\r\n\ \r\n\ @return\ int\ containing\ the\ value\ of\ bill\ for\ the\ subscriber\r\n
+numComments=3
