@@ -1,2 +1,26 @@
 #BlueJ class context
-numComments=0
+comment0.params=subscriber\ subscriptionName\ standingChargeInPence
+comment0.target=Subscription(java.lang.String,\ java.lang.String,\ int)
+comment0.text=\r\n\ Constructor\ to\ create\ an\ object\ of\ type\ subscription\r\n\ \r\n\ @param\ subscriber\ -\ name\ of\ the\ subscriber;\ must\ not\ be\ null\r\n\ @param\ subscriptionName\ -\ name\ of\ the\ subscribed\ service;\ must\ not\ be\ null\r\n\ @param\ standingChargeInPence\ -\ the\ standing\ charge\ per\ billing\ period,\ expressed\ in\ pence;\ must\ not\ be\ negative\r\n\r\n
+comment1.params=
+comment1.target=int\ computeTotalChargeInPence()
+comment1.text=\r\n\ Abstract\ method\ to\ be\ used\ in\ all\ subclasses\r\n\ Will\ be\ used\ to\ get\ the\ total\ charge\ per\ subscriber\ for\ a\ billing\ period\r\n\r\n
+comment2.params=
+comment2.target=void\ resetConsumption()
+comment2.text=\r\n\ Method\ does\ nothing\ at\ superclass\ level.\ Optional\ use\ for\ subclasses\ as\ not\ all\ will\ need\ it\ but\ can\ \r\n\ only\ fall\ here\ in\ the\ inheritance\ hierarchy\r\n\ \r\n\ Used\ to\ reset\ the\ usage\ at\ the\ start\ of\ a\ billing\ period\r\n
+comment3.params=
+comment3.target=void\ endPeriod()
+comment3.text=\r\n\ Methed\ to\ end\ billing\ period.\ Again\ usage\ is\ optional\ but\ must\ fall\ here\ in\ inheritance\ hierarchy\r\n\ \r\n\ Used\ to\ end\ a\ billing\ period\r\n
+comment4.params=
+comment4.target=java.lang.String\ generateBill()
+comment4.text=\r\n\ Methed\ to\ generate\ a\ bill\ for\ a\ given\ subscriber\r\n\ \r\n\ @return\ String\ containing\ all\ billing\ information\r\n
+comment5.params=
+comment5.target=java.lang.String\ getSubscriber()
+comment5.text=\r\n\ Getter\ method\ to\ return\ the\ name\ of\ the\ subscriber\r\n\ \r\n\ @return\ subscriber\r\n
+comment6.params=
+comment6.target=java.lang.String\ getSubscriptionName()
+comment6.text=\r\n\ Getter\ method\ to\ return\ the\ subscription\ name\r\n\ \r\n\ @return\ subscriptionName\r\n
+comment7.params=
+comment7.target=int\ getStandingChargeInPence()
+comment7.text=\r\n\ Getter\ method\ to\ show\ the\ current\ amount\ owed\ by\ a\ subscriber.\ Doesn't\ need\ to\ be\ end\ of\ a\ billing\ period\ to\ use\r\n\ \r\n\ @return\ int\ containing\ the\ current\ charge\ in\ pence\r\n
+numComments=8
