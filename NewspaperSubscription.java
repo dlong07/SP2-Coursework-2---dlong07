@@ -1,6 +1,5 @@
-import java.util.Scanner;
 /**
- * Concrete class for a newspaper subscription
+ * Concrete class for a NewspaperSubscription object
  * 
  * @author Daniel Long
  * @version 1.1
@@ -12,29 +11,30 @@ public class NewspaperSubscription extends Subscription implements HasAddress, B
     private String address;
     /**
     * Constructor for objects of class NewspaperSubscription
-    * Creates a landLineSubscription object with a phoneNumber
+    * Creates a landLineSubscription object with additional instance variables phoneNumber and address
     * 
-    * @param newspaper - String containing name of the newspaper that the subscriber is subscribed to
-    * @param address - String containing the address of the subscriber
+    * @param    subscriber - String containing name of subscriber
+    * @param    newspaper - String containing name of the newspaper that the subscriber is subscribed to
+    * @param    standingChargeInPence - int containing the cost in pence of the given newspaper
+    * @param    address - String containing the address of the subscriber
     */
     public NewspaperSubscription(String subscriber, String newspaper, int standingChargeInPence, String address)
     {   
-        super(subscriber, "Newspaper", 0);
-        Scanner in = new Scanner(System.in);
+        super(subscriber, newspaper, standingChargeInPence);
         this.newspaper = newspaper;
         this.address = address;
     }
     
     /**
-    * Overridden method from super class Subscription. Gets the value owed by the subscriber for the 
+    * Overridden method from class Subscription. Gets the amount owed by the subscriber for the 
     * given billing period
     * 
-    * @return int containing the charge for the subscriber for the given billing period
+    * @return    int containing the charge for the subscriber for the given billing period
     */
     @Override
     public int computeTotalChargeInPence()
     {
-        return 1;
+        return getStandingChargeInPence();
     }
     
     /**
@@ -51,12 +51,12 @@ public class NewspaperSubscription extends Subscription implements HasAddress, B
     /**
     * Getter method taken from BoundedCharge interface. Used to get the maximum chargeable ammount 
     * for a subscriber
-    * 
+    *  -Note- Doesn't necessarily need interface BoundedCharge if this is the same as standing charge
     * 
     * @return int containing the maximum charge for a subscriber over a given billing period.
     */
     public int getMaxChargeInPence()
     {
-        return 2;
+        return getStandingChargeInPence();
     }
 }

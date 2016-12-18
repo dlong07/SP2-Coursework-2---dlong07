@@ -7,5 +7,5 @@ comment1.target=int\ computeTotalChargeInPence()
 comment1.text=\r\n\ Overridden\ method\ from\ Subscriber.\ Computes\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ Calculated\ as\ the\ standing\ charge\ for\ the\ billing\ period\ +\r\n\ the\ product\ of\ 10\ pence\ and\ up\ to\ 1800\ minutes\ over\ the\ billing\ period\ +\r\n\ the\ product\ of\ 8\ pence\ and\ up\ to\ 900\ texts\ messages\ over\ the\ billing\ period\r\n\ Anything\ above\ the\ maximum\ minutes\ and\ texts\ is\ free\r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
 comment2.params=
 comment2.target=int\ getMaxChargeInPence()
-comment2.text=\r\n\ A\ method\ to\ compute\ the\ total\ charge\ for\ a\ billing\ period\ for\ a\ pay\ as\ you\ subscriber\r\n\ \r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
+comment2.text=\r\n\ A\ method\ given\ by\ interface\ BoundedCharge\ to\ compute\ the\ maximum\ charge\ for\ usage\ over\ a\ billing\ period\r\n\ Calculated\ at\ the\ maximum\ minutes\ *\ 10p\ plus\ the\ maximum\ texts\ *\ 8p\r\n\ \r\n\ @return\ \ an\ int\ for\ the\ amount\ of\ the\ billing\ period\ in\ pence\r\n
 numComments=3

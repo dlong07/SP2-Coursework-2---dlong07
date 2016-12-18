@@ -13,9 +13,9 @@ public abstract class MobileSubscription extends PhoneSubscription
      * 
      * 
      */
-    public MobileSubscription(String subscriber, String subscriptionName, String phoneNumber)
+    public MobileSubscription(String subscriber, String subscriptionName, int standingChargeInPence, String phoneNumber)
     {
-        super(subscriber,subscriptionName,phoneNumber);
+        super(subscriber,subscriptionName, standingChargeInPence, phoneNumber);
         this.textsSent = 0; // initialised to zero as no text will have been sent when created
     }
     
@@ -38,5 +38,17 @@ public abstract class MobileSubscription extends PhoneSubscription
     public int getTextMessages()
     {
         return this.textsSent;
+    }
+    
+    /**
+    * Setter to reset the texts sent by all MobilePhoneSubscriptions at the end of a billing period.
+    * Overridding empty method set by Subscription and PhoneSubscription 
+    * 
+    * Also calls the resetComsuption() method from the superclass to reset the class' minutes
+    */
+    @Override
+    public void resetConsumption()
+    {
+        textsSent = 0;
     }
 }

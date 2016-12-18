@@ -7,7 +7,6 @@
 public class PowerUserMobileSubscription extends MobileSubscription implements BoundedCharge
 {
     // instance variables
-    private final int sCharge = 4000; //constant to store standing charge for all power mobile users
     private final int maxMins = 1800; //maximum number of minutes that a  subscriber will be charged for
     private final int maxTexts = 900; //maximum number texts that a subscriber will be charged for
     /**
@@ -18,7 +17,7 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
      */
     public PowerUserMobileSubscription(String subscriber, String phoneNumber)
     {
-        super(subscriber,"Mobile Power User",phoneNumber);
+        super(subscriber,"Mobile Power User",4000,phoneNumber);
     }
 
     /**
@@ -36,31 +35,30 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
     {
         if(getCallMinutes() >= maxMins && getTextMessages() >= maxTexts)
         {
-            return getMaxChargeInPence();
+            return getStandingChargeInPence()+getMaxChargeInPence();
         }
         else if(getCallMinutes() < maxMins && getTextMessages() >= maxTexts)
         {
-            return sCharge+(maxTexts*8)+(getCallMinutes()*10);
+            return getStandingChargeInPence()+(maxTexts*8)+(getCallMinutes()*10);
         }
         else if(getCallMinutes() >= maxMins && getTextMessages() < maxTexts)
         {
-            return sCharge+(maxMins*10)+(getTextMessages()*8);
+            return getStandingChargeInPence()+(maxMins*10)+(getTextMessages()*8);
         }
         else
         {
-            return sCharge+(getCallMinutes()*10)+(getTextMessages()*8);
+            return getStandingChargeInPence()+(getCallMinutes()*10)+(getTextMessages()*8);
         }
     }
     
     /**
-     * A method to compute the total charge for a billing period for a pay as you subscriber
-     * 
+     * A method given by interface BoundedCharge to compute the maximum charge for usage over a billing period
+     * Calculated at the maximum minutes * 10p plus the maximum texts * 8p
      * 
      * @return  an int for the amount of the billing period in pence
      */
-    @Override
     public int getMaxChargeInPence()
     {
-        return (maxMins*10)+(maxTexts*8)+sCharge;
+        return (maxMins*10)+(maxTexts*8);
     }
 }

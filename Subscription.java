@@ -73,10 +73,10 @@ public abstract class Subscription
     public final String generateBill()
     {
         
-        return "********************************\n"+"* Subcriber: "
-                +this.getSubscriber()+"\n* Subscription Type: "
-                +this.getSubscriptionName()+"\n* Amount owed: "
-                +computeTotalChargeInPence();
+        return "========== BILL ==========\n"
+                +"Subscriber: "+subscriber+"\n"
+                +"Subscription for: "+subscriptionName+"\n"
+                +"Total charge for this period: GBP "+(double)(computeTotalChargeInPence()/100);
     }
     
     /**
@@ -100,7 +100,7 @@ public abstract class Subscription
     }
     
     /**
-    * Getter method to show the current amount owed by a subscriber. Doesn't need to be end of a billing period to use
+    * Getter method to show the current amount owed by a subscriber. Doesn't need to be at end of a billing period to use
     * 
     * @return int containing the current charge in pence
     */

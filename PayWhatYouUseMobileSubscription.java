@@ -15,7 +15,7 @@ public class PayWhatYouUseMobileSubscription extends MobileSubscription
     */
     public PayWhatYouUseMobileSubscription(String subscriber, String phoneNumber)
     {
-        super(subscriber,"PayAsYouGo Mobile User",phoneNumber);
+        super(subscriber,"PayAsYouGo Mobile User",0,phoneNumber);
     }
 
     /**
@@ -29,6 +29,6 @@ public class PayWhatYouUseMobileSubscription extends MobileSubscription
     @Override
     public int computeTotalChargeInPence()
     {
-        return (40*getCallMinutes())+(getTextMessages());
+        return (40*getCallMinutes())+(getTextMessages()*20);
     }
 }

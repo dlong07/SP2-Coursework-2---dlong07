@@ -16,9 +16,9 @@ public abstract class PhoneSubscription extends Subscription
      * 
      * @param containing the number String container
      */
-    public PhoneSubscription(String subscriber, String subscriptionName, String phoneNumber)
+    public PhoneSubscription(String subscriber, String subscriptionName, int standingChargeInPence, String phoneNumber)
     {
-        super(subscriber, subscriptionName, 0);
+        super(subscriber, subscriptionName, standingChargeInPence);
         this.phoneNumber = phoneNumber;
         this.minutesUsed = 0; //set to zero when created as they can't have used any minutes beforehand
     }
@@ -55,14 +55,14 @@ public abstract class PhoneSubscription extends Subscription
     }
     
     /**
-    * Method to reset the usage at the end of a billing period
-    * The method then prints the bill for the user and starts the billing period over again.
+    * Setter to reset the minutes used by all PhoneSubscriptions at the end of a billing period.
+    * Overridding empty method set by Subscription 
     * 
     */
    @Override
     public void resetConsumption()
     {
         minutesUsed = 0;
-        this.endPeriod();
     }
+   
 }

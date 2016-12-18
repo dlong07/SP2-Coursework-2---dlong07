@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=subscriber\ subscriptionName\ phoneNumber
-comment0.target=MobileSubscription(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.params=subscriber\ subscriptionName\ standingChargeInPence\ phoneNumber
+comment0.target=MobileSubscription(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MobilePhoneSubsription\r\n\ \r\n\ \r\n
 comment1.params=number
 comment1.target=void\ sendTextMessages(int)
@@ -8,4 +8,7 @@ comment1.text=\r\n\ Setter\ method\ to\ keep\ add\ the\ number\ of\ texts\ used\
 comment2.params=
 comment2.target=int\ getTextMessages()
 comment2.text=\r\n\ Getter\ method\ to\ keep\ track\ of\ the\ number\ of\ text\ messages\ sent\r\n\ \r\n\ \r\n\ @return\ \ \ \ \ int\ containing\ the\ number\ minutes\ used\ in\ a\ given\ billing\ period\r\n
-numComments=3
+comment3.params=
+comment3.target=void\ resetConsumption()
+comment3.text=\r\n\ Setter\ to\ reset\ the\ texts\ sent\ by\ all\ MobilePhoneSubscriptions\ at\ the\ end\ of\ a\ billing\ period.\r\n\ Overridding\ empty\ method\ set\ by\ Subscription\ and\ PhoneSubscription\ \r\n\ \r\n\ Also\ calls\ the\ resetComsuption()\ method\ from\ the\ superclass\ to\ reset\ the\ class'\ minutes\r\n
+numComments=4

@@ -7,5 +7,5 @@ comment1.target=java.lang.String\ getAddress()
 comment1.text=\r\n\ Getter\ method\ to\ return\ the\ address\ of\ the\ subscriber\r\n\ \r\n\ @return\ \ \ \ \ String\ containing\ address\ of\ the\ subscriber\r\n
 comment2.params=
 comment2.target=int\ computeTotalChargeInPence()
-comment2.text=\r\n\ Method\ to\ compute\ the\ total\ charge\ for\ a\ subscriber\ per\ billing\ period\r\n\ \r\n\ @return\ int\ containing\ the\ value\ of\ bill\ for\ the\ subscriber\r\n
+comment2.text=\r\n\ Method\ to\ compute\ the\ total\ charge\ for\ a\ subscriber\ per\ billing\ period\r\n\ Calculate\ as\ the\ product\ of\ 2\ and\ the\ total\ number\ of\ minutes\ called\ over\ a\ billing\ period\r\n\ \r\n\ @return\ \ \ int\ containing\ the\ value\ of\ bill\ for\ the\ subscriber\r\n
 numComments=3

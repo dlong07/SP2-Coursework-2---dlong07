@@ -9,7 +9,6 @@ public class LandLineSubscription extends PhoneSubscription implements HasAddres
 {
     // instance variables - replace the example below with your own
     private String address; // Address of the subscriber must be entered here
-    private final int sCharge = 1800; // minimum charge in pence for all landlines for a given billing period
     /**
      * Constructor for objects of class LandLineSubscription.
      * Creates a landLineSubscription object with a phoneNumber
@@ -19,7 +18,7 @@ public class LandLineSubscription extends PhoneSubscription implements HasAddres
     public LandLineSubscription(String subscriber, String phoneNumber, String address)
     {
         // initialise instance variables
-        super(subscriber,"Landline",phoneNumber);
+        super(subscriber,"Landline telephone",1800,phoneNumber);
         this.address = address;
     }
 
@@ -35,12 +34,13 @@ public class LandLineSubscription extends PhoneSubscription implements HasAddres
     
     /**
      * Method to compute the total charge for a subscriber per billing period
+     * Calculate as the product of 2 and the total number of minutes called over a billing period
      * 
-     * @return int containing the value of bill for the subscriber
+     * @return   int containing the value of bill for the subscriber
      */
     @Override
     public int computeTotalChargeInPence()
     {
-        return sCharge+(this.getCallMinutes()*2);
+        return getStandingChargeInPence()+(this.getCallMinutes()*2);
     }
 }
