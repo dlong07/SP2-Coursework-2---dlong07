@@ -50,5 +50,6 @@ public abstract class MobileSubscription extends PhoneSubscription
     public void resetConsumption()
     {
         textsSent = 0;
+        super.resetConsumption();
     }
 }

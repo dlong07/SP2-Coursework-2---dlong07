@@ -2,7 +2,7 @@ public class SubscriptionMain
 {
     public static void main(String[] args)
     {
-         NewspaperSubscription SH = new NewspaperSubscription("Sherlock Holmes","The Strand Magazine",10,"22B Baker Street");
+         NewspaperSubscription SH = new NewspaperSubscription("Sherlock Holmes","The Strand Magazine",10,"221B Baker Street");
          NewspaperSubscription GB = new NewspaperSubscription("George Birkbeck","The Lamp and Owl",100,"43 Gordon Square");
          LandLineSubscription JDf = new LandLineSubscription("Jane Doe","02079460001","Malet Street");
          PayWhatYouUseMobileSubscription JDm = new PayWhatYouUseMobileSubscription("John Doe","07700900002");
@@ -11,7 +11,7 @@ public class SubscriptionMain
          JDf.makeCall(10010);
          
          JDm.makeCall(11000);
-         JDm.sendTextMessages(20);
+         JDm.sendTextMessages(22);
          
          KD.makeCall(1954);
          KD.sendTextMessages(1202);

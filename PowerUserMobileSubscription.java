@@ -35,7 +35,7 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
     {
         if(getCallMinutes() >= maxMins && getTextMessages() >= maxTexts)
         {
-            return getStandingChargeInPence()+getMaxChargeInPence();
+            return getMaxChargeInPence();
         }
         else if(getCallMinutes() < maxMins && getTextMessages() >= maxTexts)
         {
@@ -59,6 +59,6 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
      */
     public int getMaxChargeInPence()
     {
-        return (maxMins*10)+(maxTexts*8);
+        return getStandingChargeInPence()+(maxMins*10)+(maxTexts*8);
     }
 }

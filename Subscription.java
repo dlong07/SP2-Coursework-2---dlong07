@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 /**
  * Abstract SuperClass for the Project Subscription
  * All abstract and concrete classes below this in the hierarchy will be of type Subscription
@@ -72,11 +73,16 @@ public abstract class Subscription
      */
     public final String generateBill()
     {
+        DecimalFormat outputF = new DecimalFormat("0.00");
+        double amountCharged = (double)computeTotalChargeInPence();
+        String output = outputF.format(amountCharged/100);
         
         return "========== BILL ==========\n"
                 +"Subscriber: "+subscriber+"\n"
                 +"Subscription for: "+subscriptionName+"\n"
-                +"Total charge for this period: GBP "+(double)(computeTotalChargeInPence()/100);
+                +"Total charge for this period: GBP "+output;
+                
+
     }
     
     /**
