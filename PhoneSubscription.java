@@ -9,7 +9,8 @@ public abstract class PhoneSubscription extends Subscription
 {
     // instance variables for all types of PhoneSubscription
     private String phoneNumber; // all phone subscriptions will need a phone number given by concrete classes
-    private int minutesUsed; // all phone subscriptions will need to keep track of the minutes they've used
+    private int minutesUsed = 0; // all phone subscriptions will need to keep track of the minutes they've used
+                                 //set to zero when created as the object can't have used any minutes beforehand
     /**
      * Constructor for objects of class PhoneSubscription
      * User the contructor of Subscription to create required instance variables
@@ -19,8 +20,20 @@ public abstract class PhoneSubscription extends Subscription
     public PhoneSubscription(String subscriber, String subscriptionName, int standingChargeInPence, String phoneNumber)
     {
         super(subscriber, subscriptionName, standingChargeInPence);
-        this.phoneNumber = phoneNumber;
-        this.minutesUsed = 0; //set to zero when created as they can't have used any minutes beforehand
+        // passes subscriber, subscriptionName and standingCharge params to superclass constructor
+        if(phoneNumber == null || phoneNumber == "") // make sure number is not null
+        {
+            throw new IllegalArgumentException("Phone number cannot be null! Please try again.");
+        }
+        else if(phoneNumber.length() < 10) // make sure number isn't too short
+        {
+            throw new IllegalArgumentException("Phone number entered is not long enough. Please try again.");
+        }
+        else if(phoneNumber.length() > 11) // make sure number isn't too long
+        {
+            throw new IllegalArgumentException("Phone number entered is too long. Please try again.");
+        }
+        this.phoneNumber = phoneNumber; 
     }
     /**
      * Getter method to return the subscriber's phone number
@@ -40,7 +53,7 @@ public abstract class PhoneSubscription extends Subscription
     */
     public void makeCall(int minutes)
     {
-        this.minutesUsed += minutes;
+        this.minutesUsed += minutes; // adds minutes used to the total
     }
     
     /**

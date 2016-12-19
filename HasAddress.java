@@ -10,6 +10,7 @@ public interface HasAddress
       /**
      * Method to get address of each subscriber
      * 
+     * @return  String containing the address contained the corresponding Subscription object
      */
     String getAddress();
 }

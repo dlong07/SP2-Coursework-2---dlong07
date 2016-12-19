@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.params=
 comment0.target=int\ getMaxChargeInPence()
-comment0.text=\r\n\ Method\ to\ get\ maximum\ charge\ for\ customers\ where\ charging\ has\ a\ limit\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment0.text=\r\n\ Method\ to\ get\ maximum\ charge\ for\ customers\ where\ charging\ has\ a\ limit\r\n\ \r\n\ @return\ \ \ \ \ int\ conatining\ the\ maximum\ amount\ to\ charge\ a\ subscriber\r\n
 numComments=1

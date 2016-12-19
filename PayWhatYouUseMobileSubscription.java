@@ -1,4 +1,3 @@
-
 /**
  * Concrete class for PayWhatYouUseMobileSubscription
  * 
@@ -15,7 +14,8 @@ public class PayWhatYouUseMobileSubscription extends MobileSubscription
     */
     public PayWhatYouUseMobileSubscription(String subscriber, String phoneNumber)
     {
-        super(subscriber,"PayAsYouGo Mobile User",0,phoneNumber);
+        super(subscriber,"Pay what you use mobile phone",0,phoneNumber);
+        // passes subscriber, subscriptionName, standingCharge and phoneNumber params to superclass constructor
     }
 
     /**

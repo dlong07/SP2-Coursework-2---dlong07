@@ -14,14 +14,22 @@ public class NewspaperSubscription extends Subscription implements HasAddress, B
     * Creates a landLineSubscription object with additional instance variables phoneNumber and address
     * 
     * @param    subscriber - String containing name of subscriber
-    * @param    newspaper - String containing name of the newspaper that the subscriber is subscribed to
+    * @param    newspaper - String containing name of the newspaper that the subscriber is subscribed to - used for name of subscription
     * @param    standingChargeInPence - int containing the cost in pence of the given newspaper
     * @param    address - String containing the address of the subscriber
     */
     public NewspaperSubscription(String subscriber, String newspaper, int standingChargeInPence, String address)
     {   
-        super(subscriber, newspaper, standingChargeInPence);
+        super(subscriber, newspaper, standingChargeInPence); // passes subscriber, newspaper and standingCharge params passed to superclass constructor
+        if(newspaper == null || newspaper == "") // make sure that the newspaper name is entered
+        {
+            throw new IllegalArgumentException("Newspaper name cannot be null! Please try again.");
+        }
         this.newspaper = newspaper;
+        if(address == null || address == "") // make sure that the address is entered
+        {
+            throw new IllegalArgumentException("Address cannot be null! Please try again.");
+        }
         this.address = address;
     }
     

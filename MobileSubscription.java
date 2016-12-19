@@ -7,7 +7,8 @@
 public abstract class MobileSubscription extends PhoneSubscription
 {
     //instance variable
-    private int textsSent; // used to monitor the number of texts sent by the subscriber
+    private int textsSent = 0; // used to monitor the number of texts sent by the subscriber
+                               //set to zero when created as the object can't have sent any texts beforehand
     /**
      * Constructor for objects of class MobilePhoneSubsription
      * 
@@ -16,7 +17,7 @@ public abstract class MobileSubscription extends PhoneSubscription
     public MobileSubscription(String subscriber, String subscriptionName, int standingChargeInPence, String phoneNumber)
     {
         super(subscriber,subscriptionName, standingChargeInPence, phoneNumber);
-        this.textsSent = 0; // initialised to zero as no text will have been sent when created
+        // passes subscriber, subscriptionName, standingCharge and phoneNumber params to superclass constructor
     }
     
     /**
@@ -26,7 +27,7 @@ public abstract class MobileSubscription extends PhoneSubscription
     */
     public void sendTextMessages(int number)
     {
-        textsSent += number;
+        textsSent += number; //number of texts sent added to total
     }
     
     /**
@@ -50,6 +51,6 @@ public abstract class MobileSubscription extends PhoneSubscription
     public void resetConsumption()
     {
         textsSent = 0;
-        super.resetConsumption();
+        super.resetConsumption(); // call to class PhoneSubscription tp reset minutes used. No need to rewrite it here
     }
 }

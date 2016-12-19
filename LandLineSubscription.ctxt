@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=subscriber\ phoneNumber\ address
 comment0.target=LandLineSubscription(java.lang.String,\ java.lang.String,\ java.lang.String)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LandLineSubscription.\r\n\ Creates\ a\ landLineSubscription\ object\ with\ a\ phoneNumber\r\n\ \r\n\ @param\ \ \ PhoneNumber\ -\ unique\ phone\ number\ for\ subscriber\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ LandLineSubscription.\r\n\ Creates\ a\ landLineSubscription\ object\ with\ a\ phoneNumber\ and\ address\r\n\ \r\n\ @param\ \ \ subscriber\ -\ name\ of\ the\ person\ taking\ the\ subscription\ -\ must\ not\ be\ null\r\n\ @param\ \ \ phoneNumber\ -\ unique\ phone\ number\ for\ subscriber\ -\ must\ not\ be\ null\r\n\ @param\ \ \ address\ -\ subscriber's\ address\ -\ must\ not\ be\ null\r\n
 comment1.params=
 comment1.target=java.lang.String\ getAddress()
 comment1.text=\r\n\ Getter\ method\ to\ return\ the\ address\ of\ the\ subscriber\r\n\ \r\n\ @return\ \ \ \ \ String\ containing\ address\ of\ the\ subscriber\r\n

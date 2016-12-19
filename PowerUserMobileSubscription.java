@@ -17,7 +17,8 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
      */
     public PowerUserMobileSubscription(String subscriber, String phoneNumber)
     {
-        super(subscriber,"Mobile Power User",4000,phoneNumber);
+        super(subscriber,"Mobile power user",4000,phoneNumber);
+         // passes subscriber, subscriptionName, standingCharge and phoneNumber params to superclass constructor
     }
 
     /**
@@ -33,21 +34,21 @@ public class PowerUserMobileSubscription extends MobileSubscription implements B
     @Override
     public int computeTotalChargeInPence()
     {
-        if(getCallMinutes() >= maxMins && getTextMessages() >= maxTexts)
+        if(getCallMinutes() >= maxMins && getTextMessages() >= maxTexts) //if over minimum usage, charge the maximum
         {
             return getMaxChargeInPence();
         }
-        else if(getCallMinutes() < maxMins && getTextMessages() >= maxTexts)
+        else if(getCallMinutes() < maxMins && getTextMessages() >= maxTexts) // if minumum chargable texts are used but not the minutes
         {
-            return getStandingChargeInPence()+(maxTexts*8)+(getCallMinutes()*10);
+            return getStandingChargeInPence()+(maxTexts*8)+(getCallMinutes()*10); 
         }
-        else if(getCallMinutes() >= maxMins && getTextMessages() < maxTexts)
+        else if(getCallMinutes() >= maxMins && getTextMessages() < maxTexts) // if minumum chargable minutes are used but not the texts
         {
             return getStandingChargeInPence()+(maxMins*10)+(getTextMessages()*8);
         }
-        else
+        else // else work out the charge for minutes and texts used and add to standing charge
         {
-            return getStandingChargeInPence()+(getCallMinutes()*10)+(getTextMessages()*8);
+            return getStandingChargeInPence()+(getCallMinutes()*10)+(getTextMessages()*8); 
         }
     }
     

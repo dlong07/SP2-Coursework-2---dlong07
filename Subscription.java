@@ -21,17 +21,17 @@ public abstract class Subscription
      */
     public Subscription(String subscriber, String subscriptionName, int standingChargeInPence)
     {
-        if(subscriber == null || subscriber == "")
+        if(subscriber == null || subscriber == "") //check to see if subscriber is null or empty
         {
             throw new IllegalArgumentException("Subcriber name cannot be null! Please try again.");
         }
         this.subscriber = subscriber;
-        if(subscriptionName == null || subscriptionName == "")
+        if(subscriptionName == null || subscriptionName == "") //check to see if subscriptionName is null or empty
         {
             throw new IllegalArgumentException("Subcription name cannot be null! Please try again.");
         }
         this.subscriptionName = subscriptionName;
-        if(standingChargeInPence < 0)
+        if(standingChargeInPence < 0) //check to see if standing charge is negative
         {
             throw new IllegalArgumentException("Standing Charge must 0 or greater!");
         }
@@ -46,13 +46,14 @@ public abstract class Subscription
     public abstract int computeTotalChargeInPence();
     
     /**
-     * Method does nothing at superclass level. Optional use for subclasses as not all will need it but can 
-     * only fall here in the inheritance hierarchy as it can't be abstract in the PhoneSubscription class
+     * Method does nothing at superclass level. Optional use for subclasses so is not abstract
+     * 
      * 
      * Used to reset the usage at the start of a billing period
      */
     public void resetConsumption()
     {
+        //does nothing in superclass
     }
     
     /**
@@ -62,8 +63,8 @@ public abstract class Subscription
      */
     public final void endPeriod()
     {
-        //reset other billing period. Add period???
-        System.out.println(this.generateBill());
+        System.out.println(this.generateBill()); // prints the bill for subscription object
+        resetConsumption();                      // resets any variables that are used to incur additional costs
     }
     
     /**
@@ -77,12 +78,22 @@ public abstract class Subscription
         double amountCharged = (double)computeTotalChargeInPence();
         String output = outputF.format(amountCharged/100);
         
-        return "========== BILL ==========\n"
-                +"Subscriber: "+subscriber+"\n"
-                +"Subscription for: "+subscriptionName+"\n"
-                +"Total charge for this period: GBP "+output;
-                
-
+        if (this instanceof PhoneSubscription) { // check to see if the object is of type PhoneSubscription 
+            // phone number printed for PhoneSubscription objects
+            return "========== BILL ==========\n"
+            +"Subscriber: "+subscriber+"\n"
+            // casts the object to type PhoneSubscription to allow getPhoneNumber to be called. Only PhoneSubscription objects will be passed in this IF statement anyway
+            +"Subscription for: "+subscriptionName+" "+((PhoneSubscription)this).getPhoneNumber()+"\n"  
+            +"Total charge for this period: GBP "+output;
+        }   
+        else // if not a PhoneSubscription object, print bill without number
+        {
+             return "========== BILL ==========\n"
+            +"Subscriber: "+subscriber+"\n"
+            +"Subscription for: "+subscriptionName+"\n"
+            +"Total charge for this period: GBP "+output;
+        }
+               
     }
     
     /**

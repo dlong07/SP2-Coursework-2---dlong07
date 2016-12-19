@@ -10,8 +10,7 @@ public interface BoundedCharge
     /**
      * Method to get maximum charge for customers where charging has a limit
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * @return     int conatining the maximum amount to charge a subscriber
      */
     int getMaxChargeInPence();
 }
